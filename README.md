@@ -25,12 +25,58 @@ The two input variables (`a` and `b`) are controlled by physical switches `SW[1]
 * **LEDG[1]:** NOR Gate (`~(SW[1] | SW[2])`)
 * **LEDG[0]:** XOR Gate (`SW[1] ^ SW[2]`)
 
-### Experiment 2: Half Adder circuit
+### Experiment 2: Half Adder Circuit
 
-### Experiment 4: Ripple Carry Adder
-*(Drag and drop your 4-bit ripple carry adder GIF here)*
-* Detailed source code is located in the `/Lab1_Experiment_4` directory.
+![half_adder_demo](half_adder.gif)
 
-### Experiment 7: 16:1 Multiplexer
-*(Drag and drop your 16:1 MUX channel-switching GIF here)*
-* This 16:1 multiplexer is built using a structural model assembled from five 4:1 MUX modules. Detailed source code is located in the `/Lab1_Experiment_7` directory.
+* The circuit implements a basic 1-bit Half Adder.
+* **Logic & I/O Mapping**
+The two input bits (`A` and `B`) are controlled by physical switches. The outputs are mapped to the LEDs as follows:
+* **Sum (S):** XOR Gate logic (`A ^ B`)
+* **Carry (Cout):** AND Gate logic (`A & B`)
+
+### Experiment 3: Full Adder Circuit
+
+![full_adder_demo](full_adder.gif)
+
+* The circuit implements a 1-bit Full Adder with a carry-in input.
+* **Logic & I/O Mapping**
+The three input bits (`A`, `B`, and `Cin`) are controlled by switches. The outputs are mapped to the LEDs:
+* **Sum (S):** `A ^ B ^ Cin`
+* **Carry (Cout):** `(A & B) | (B & Cin) | (A & Cin)`
+
+### Experiment 4: 4-Bit Ripple Carry Adder
+
+![ripple_carry_adder_demo](ripple_carry_adder.gif)
+
+* The circuit implements a 4-bit Ripple Carry Adder by cascading four 1-bit Full Adders in a structural model.
+* **Logic & I/O Mapping**
+* **Inputs:** Two 4-bit numbers (`A[3:0]` and `B[3:0]`) and an initial carry-in (`Cin`), controlled by switches.
+* **Outputs:** A 4-bit sum (`S[3:0]`) and a final carry-out (`Cout`), mapped to the LEDs.
+
+### Experiment 5: 2:1 Multiplexer Circuit
+
+![mux_2to1_demo](mux2to1.gif)
+
+* The circuit implements a standard 2-to-1 Multiplexer.
+* **Logic & I/O Mapping**
+* **Inputs:** Two data lines (`i0`, `i1`) and one select line (`sel`).
+* **Output (y):** Routes `i0` to the output if `sel = 0`, and `i1` if `sel = 1`.
+
+### Experiment 6: 4:1 Multiplexer Circuit
+
+![mux_4to1_demo](mux4to1.gif)
+
+* The circuit implements a 4-to-1 Multiplexer.
+* **Logic & I/O Mapping**
+* **Inputs:** Four data lines (`i0` to `i3`) and a 2-bit select line (`s[1:0]`).
+* **Output (y):** Routes one of the four data inputs to the output based on the binary value of the select switches.
+
+### Experiment 7: 16:1 Multiplexer Circuit
+
+![mux_16to1_demo](mux16to1.gif)
+
+* This 16:1 multiplexer is built using a structural model assembled from five instances of the 4:1 MUX modules.
+* **Logic & I/O Mapping**
+* **Inputs:** Sixteen data lines (`D[15:0]`) and a 4-bit select line (`S[3:0]`).
+* **Output (Y):** Routes one of the 16 inputs to the single output based on the select lines.
