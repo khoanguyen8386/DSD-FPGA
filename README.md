@@ -24,6 +24,8 @@ The two input variables (`a` and `b`) are controlled by physical switches `SW[1]
 * **LEDG[1]:** NOR Gate (`~(SW[1] | SW[2])`)
 * **LEDG[0]:** XOR Gate (`SW[1] ^ SW[2]`)
 
+### Experiment 2: Half Adder circuit
+
 ### Experiment 4: Ripple Carry Adder
 *(Drag and drop your 4-bit ripple carry adder GIF here)*
 * Detailed source code is located in the `/Lab1_Experiment_4` directory.
