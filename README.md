@@ -37,7 +37,7 @@ The two input bits (`A` and `B`) are controlled by physical switches. The output
 
 ### Experiment 3: Full Adder Circuit
 
-![full_adder_demo](full_adder.gif)
+![full_adder](full_adder.gif)
 
 * The circuit implements a 1-bit Full Adder with a carry-in input.
 * **Logic & I/O Mapping**
@@ -47,7 +47,7 @@ The three input bits (`A`, `B`, and `Cin`) are controlled by switches. The outpu
 
 ### Experiment 4: 4-Bit Ripple Carry Adder
 
-![ripple_carry_adder_demo](ripple_carry_adder.gif)
+![ripple_carry_adder](ripple_carry_adder.gif)
 
 * The circuit implements a 4-bit Ripple Carry Adder by cascading four 1-bit Full Adders in a structural model.
 * **Logic & I/O Mapping**
@@ -56,7 +56,7 @@ The three input bits (`A`, `B`, and `Cin`) are controlled by switches. The outpu
 
 ### Experiment 5: 2:1 Multiplexer Circuit
 
-![mux_2to1_demo](mux2to1.gif)
+![mux_2to1](mux2to1.gif)
 
 * The circuit implements a standard 2-to-1 Multiplexer.
 * **Logic & I/O Mapping**
@@ -65,7 +65,7 @@ The three input bits (`A`, `B`, and `Cin`) are controlled by switches. The outpu
 
 ### Experiment 6: 4:1 Multiplexer Circuit
 
-![mux_4to1_demo](mux4to1.gif)
+![mux_4to1](mux4to1.gif)
 
 * The circuit implements a 4-to-1 Multiplexer.
 * **Logic & I/O Mapping**
