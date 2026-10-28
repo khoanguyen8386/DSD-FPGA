@@ -13,7 +13,7 @@ Below are the real-world operational results after successfully programming the 
 
 ### Experiment 1: Basic Logic Gates
 
-<img width="600" height="337" alt="all_gate" src="https://github.com/user-attachments/assets/3fa8aa76-a658-487f-b402-6a983f2359a3" />
+![all_gate](https://github.com/user-attachments/assets/7c380ceb-6ab0-48a7-8ad8-f16c890bc9cd)
 
 * The circuit utilizes onboard SW switches for inputs and LEDG indicators to display the logic outputs.
 * **Logic Gate LED Mapping**
