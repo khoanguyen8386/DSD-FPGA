@@ -12,7 +12,8 @@ This repository contains the Verilog HDL source code for 7 combinational logic c
 Below are the real-world operational results after successfully programming the Verilog RTL onto the DE2-115 board.
 
 ### Experiment 1: Basic Logic Gates
-https://github.com/user-attachments/assets/800e6fdd-1739-4b0e-8660-2a07ba306629
+
+<img width="600" height="337" alt="all_gate" src="https://github.com/user-attachments/assets/3fa8aa76-a658-487f-b402-6a983f2359a3" />
 
 * The circuit utilizes onboard SW switches for inputs and LEDG indicators to display the logic outputs.
 * **Logic Gate LED Mapping**
