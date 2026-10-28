@@ -1,0 +1,94 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0131CC40 .scope module, "tb_mux21" "tb_mux21" 2 3;
+ .timescale -9 -12;
+v01204F08_0 .var "i0", 0 0;
+v01205220_0 .var "i1", 0 0;
+v012052D0_0 .var/i "k", 31 0;
+v01204F60_0 .var "sel", 0 0;
+v01205278_0 .net "y_bh", 0 0, v01204EB0_0; 1 drivers
+v01205380_0 .net "y_df", 0 0, L_013132E8; 1 drivers
+v01204CA0_0 .net "y_st", 0 0, L_01205728; 1 drivers
+S_0131CDD8 .scope module, "UUT_DF" "mux21_data_flow" 2 13, 3 6, S_0131CC40;
+ .timescale 0 0;
+L_01313358 .functor NOT 1, v01204F60_0, C4<0>, C4<0>, C4<0>;
+L_01313320 .functor AND 1, v01204F08_0, L_01313358, C4<1>, C4<1>;
+L_01313390 .functor AND 1, v01205220_0, v01204F60_0, C4<1>, C4<1>;
+L_013132E8 .functor OR 1, L_01313320, L_01313390, C4<0>, C4<0>;
+v01204DA8_0 .net *"_s0", 0 0, L_01313358; 1 drivers
+v01204C48_0 .net *"_s2", 0 0, L_01313320; 1 drivers
+v01204FB8_0 .net *"_s4", 0 0, L_01313390; 1 drivers
+v01205068_0 .net "i0", 0 0, v01204F08_0; 1 drivers
+v01205118_0 .net "i1", 0 0, v01205220_0; 1 drivers
+v012051C8_0 .net "sel", 0 0, v01204F60_0; 1 drivers
+v01204E00_0 .alias "y", 0 0, v01205380_0;
+S_0131D5D0 .scope module, "UUT_BH" "mux21_Behavioural" 2 14, 3 15, S_0131CC40;
+ .timescale 0 0;
+v01205010_0 .alias "i0", 0 0, v01205068_0;
+v01205328_0 .alias "i1", 0 0, v01205118_0;
+v012050C0_0 .alias "sel", 0 0, v012051C8_0;
+v01204EB0_0 .var "y", 0 0;
+E_0131C4C8 .event edge, v01204E58_0, v01313DA8_0, v0131EF38_0;
+S_0131CCC8 .scope module, "UUT_ST" "mux21_structural" 2 15, 3 29, S_0131CC40;
+ .timescale 0 0;
+L_01313730 .functor NOT 1, v01204F60_0, C4<0>, C4<0>, C4<0>;
+L_01313768 .functor AND 1, v01205220_0, v01204F60_0, C4<1>, C4<1>;
+L_01205648 .functor AND 1, v01204F08_0, L_01313730, C4<1>, C4<1>;
+L_01205728 .functor OR 1, L_01205648, L_01313768, C4<0>, C4<0>;
+v01313DA8_0 .alias "i0", 0 0, v01205068_0;
+v0131EF38_0 .alias "i1", 0 0, v01205118_0;
+v0131EF90_0 .net "net1", 0 0, L_01313730; 1 drivers
+v01313E00_0 .net "net2", 0 0, L_01313768; 1 drivers
+v01313E58_0 .net "net3", 0 0, L_01205648; 1 drivers
+v01204E58_0 .alias "sel", 0 0, v012051C8_0;
+v01205170_0 .alias "y", 0 0, v01204CA0_0;
+    .scope S_0131D5D0;
+T_0 ;
+    %wait E_0131C4C8;
+    %load/v 8, v012050C0_0, 1;
+    %cmpi/u 8, 0, 1;
+    %jmp/0xz  T_0.0, 4;
+    %load/v 8, v01205010_0, 1;
+    %set/v v01204EB0_0, 8, 1;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/v 8, v01205328_0, 1;
+    %set/v v01204EB0_0, 8, 1;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0131CC40;
+T_1 ;
+    %vpi_call 2 18 "$dumpfile", "wave.vcd";
+    %vpi_call 2 19 "$dumpvars", 1'sb0, S_0131CC40;
+    %vpi_call 2 21 "$display", "Time | sel i1 i0 | y_df y_bh y_st";
+    %vpi_call 2 22 "$monitor", "%4t |  %b   %b  %b |   %b    %b    %b", $time, v01204F60_0, v01205220_0, v01204F08_0, v01205380_0, v01205278_0, v01204CA0_0;
+    %set/v v012052D0_0, 0, 32;
+T_1.0 ;
+    %load/v 8, v012052D0_0, 32;
+   %cmpi/s 8, 8, 32;
+    %jmp/0xz T_1.1, 5;
+    %load/v 8, v012052D0_0, 3; Only need 3 of 32 bits
+; Save base=8 wid=3 in lookaside.
+    %set/v v01204F08_0, 8, 1;
+    %set/v v01205220_0, 9, 1;
+    %set/v v01204F60_0, 10, 1;
+    %delay 10000, 0;
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v012052D0_0, 32;
+    %set/v v012052D0_0, 8, 32;
+    %jmp T_1.0;
+T_1.1 ;
+    %vpi_call 2 31 "$stop";
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_mux21.v";
+    "mux21_design.v";
