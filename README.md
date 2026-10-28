@@ -13,7 +13,7 @@ Below are the real-world operational results after successfully programming the 
 
 ### Experiment 1: Basic Logic Gates
 
-![all_gate](https://github.com/user-attachments/assets/7c380ceb-6ab0-48a7-8ad8-f16c890bc9cd)
+![all_gate](assets/all_gate.gif)
 
 * The circuit utilizes onboard SW switches for inputs and LEDG indicators to display the logic outputs.
 * **Logic Gate LED Mapping**
@@ -27,7 +27,7 @@ The two input variables (`a` and `b`) are controlled by physical switches `SW[1]
 
 ### Experiment 2: Half Adder Circuit
 
-![half_adder](half_adder.gif)
+![half_adder](assets/half_adder.gif)
 
 * The circuit implements a basic 1-bit Half Adder.
 * **Logic & I/O Mapping**
