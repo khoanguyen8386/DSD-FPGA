@@ -27,7 +27,7 @@ The two input variables (`a` and `b`) are controlled by physical switches `SW[1]
 
 ### Experiment 2: Half Adder Circuit
 
-![half_adder_demo](half_adder.gif)
+![half_adder](half_adder.gif)
 
 * The circuit implements a basic 1-bit Half Adder.
 * **Logic & I/O Mapping**
